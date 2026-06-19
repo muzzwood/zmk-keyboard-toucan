@@ -23,24 +23,26 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
-    # urob modules used by the ported keymap. Pinned to urob's commits (which he
-    # supports against ZMK v0.3). zmk-leader-key + zmk-unicode are intentionally
+    # urob modules used by the ported keymap, pinned to their v0.3 release tags to
+    # match ZMK v0.3 (the toucan's pinned ZMK). urob's main branch targets the newer
+    # ZMK v0.4 C API (e.g. zmk_keymap_layer_activate gained an argument), which does
+    # NOT compile against v0.3. zmk-leader-key + zmk-unicode are intentionally
     # omitted (leader key dropped from this first pass).
     - name: zmk-helpers
       remote: urob
-      revision: 0b9e9d1dd9e86f70b4c8c2b0fab55c4f90c9d2e3
+      revision: v0.3
       path: modules/zmk/helpers
     - name: zmk-adaptive-key
       remote: urob
-      revision: 18cc2795a64ccb394d1a7b7d591a5bfe3f25924b
+      revision: v0.3
       path: modules/zmk/adaptive-key
     - name: zmk-auto-layer
       remote: urob
-      revision: dfa7c695ffde41ef8064245453595d50e198ae1d
+      revision: v0.3
       path: modules/zmk/auto-layer
     - name: zmk-tri-state
       remote: urob
-      revision: 2007896c6d5bfb519e8babccf8633841c5647d8b
+      revision: v0.3
       path: modules/zmk/tri-state
   self:
     path: config

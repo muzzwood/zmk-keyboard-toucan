@@ -43,6 +43,19 @@
     )
 
 #include "zmk-helpers/key-labels/42.h"
+
+// zmk-helpers v0.3's 42.h defines the per-key labels (LT0..RH2) but not these
+// aggregates (added upstream after v0.3). urob's base.keymap needs them for the
+// bilateral homerow mods (hold-trigger-key-positions = <KEYS_R THUMBS> etc.).
+// Guarded so a newer zmk-helpers (which already defines them) won't clash.
+#ifndef KEYS_L
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5
+#define THUMBS_L LH0 LH1 LH2
+#define THUMBS_R RH0 RH1 RH2
+#define THUMBS THUMBS_L THUMBS_R
+#endif
+
 #include "base.keymap"
 
 /* ───────────────────────── Toucan's native layers ─────────────────────────
