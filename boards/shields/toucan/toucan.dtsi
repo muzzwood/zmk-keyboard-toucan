@@ -108,8 +108,12 @@
         status = "disabled";
         device = <&glidepoint_split>;
         input-processors = <&zip_xy_scaler 250 100>;
+        // Trackpad enters scroll mode on urob's Nav layer (1) and the toucan's
+        // own NAV/SYM layers (6/7). The toucan layers moved from 1/2 to 6/7 when
+        // urob's config was ported in (urob's layers now occupy 0-5; see
+        // config/base.keymap NAV and config/toucan.keymap TOU_NAV/TOU_SYM).
         scroller {
-            layers = <1 2>;
+            layers = <1 6 7>;
             input-processors = <
                 &zip_xy_to_scroll_mapper
                 &zip_scroll_scaler 1 5
