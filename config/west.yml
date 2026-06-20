@@ -50,7 +50,7 @@ manifest:
     # Broadcasts keyboard status (active layer, battery) as a BLE advertisement
     # so a Prospector dongle in scanner mode can display it without pairing.
     # v2.2.1 explicitly supports ZMK v0.3 (Zephyr 3.5); enabled via the
-    # CONFIG_ZMK_STATUS_* keys in boards/shields/toucan/toucan.conf.
+    # CONFIG_ZMK_STATUS_* keys in boards/shields/toucan/toucan_left.conf.
     - name: prospector-zmk-module
       remote: t-ogura
       revision: v2.2.1
